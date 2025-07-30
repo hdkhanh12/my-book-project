@@ -6,6 +6,7 @@ import axios from 'axios';
 import Avatar from '@/components/Avatar';
 import Toast from '@/components/Toast'; 
 import ConfirmationModal from '@/components/ConfirmationModal'; 
+import Image from 'next/image'; 
 
 
 export default function SettingsPage() {
@@ -118,7 +119,7 @@ export default function SettingsPage() {
                 <h2 className="text-xl font-semibold mb-4">Thay đổi Avatar</h2>
                 <div className="flex items-center gap-4">
                     {preview 
-                        ? <img src={preview} alt="Preview" className="w-20 h-20 rounded-full object-cover" /> 
+                        ? <Image src={preview} alt="Preview" className="w-20 h-20 rounded-full object-cover" /> 
                         : <Avatar username={user.username} avatarUrl={user.avatar} />
                     }
                     <form onSubmit={handleAvatarUpload}>

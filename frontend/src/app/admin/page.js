@@ -67,7 +67,7 @@ export default function AdminPage() {
                 setUsers(usersRes.data);
                 setPendingLinks(pendingLinksRes.data);
                 
-                /* Làm giàu dữ liệu cho "Sách đã có Link mua" */
+                /* Làm giàu dữ liệu cho Sách đã có Link mua */
                 // Lấy danh sách bookId từ API
                 const bookIds = booksWithLinksRes.data;
 
@@ -77,10 +77,9 @@ export default function AdminPage() {
                 );                
                 const bookDetailsResponses = await Promise.all(bookDetailsPromises);
                 const detailedBooks = bookDetailsResponses.map(res => res.data);
-                // console.log("Dữ liệu sách chi tiết đã lấy về:", detailedBooks);
                 setBooksWithLinks(detailedBooks);
                 
-                /* Làm giàu dữ liệu cho "Quản lý Đánh giá" */
+                /* Làm giàu dữ liệu cho Quản lý Đánh giá */
                 if (fetchedReviews.length > 0) {
                     const uniqueBookIdsFromReviews = [...new Set(fetchedReviews.map(r => r.bookId))];
                     const reviewBookDetailsPromises = uniqueBookIdsFromReviews.map(id =>
@@ -326,7 +325,7 @@ export default function AdminPage() {
                                         </div>
                                     </div>
                                 ) : (
-                                    <p className="text-sm text-[var(--foreground)] italic">"{review.comment}"</p>
+                                    <p className="text-sm text-[var(--foreground)] italic"></p>
                                 )}
                             </div>
                         </div>
