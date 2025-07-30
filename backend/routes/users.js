@@ -3,6 +3,7 @@ const User = require('../models/User');
 const bcrypt = require('bcryptjs');
 const multer = require('multer');
 const axios = require('axios');
+const { verifyToken } = require('../verifyToken');
 
 // --- Cấu hình Multer để lưu file ---
 const storage = multer.diskStorage({
