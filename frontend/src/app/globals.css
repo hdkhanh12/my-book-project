@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Light Mode */
+    --background: #f4f4f5; 
+    --foreground: #18181b; 
+    --navbar-bg: #ffffff;
+    --navbar-border: #e4e4e7;
+    --search-bg: #ffffff;
+    --search-text: #18181b;
+    --dropdown-bg: #ffffff;
+    --hover-bg: #f4f4f5;
+  }
+
+  .dark {
+    /* Dark Mode */
+    --background: #09090b;
+    --foreground: #fafafa;
+    --navbar-bg: #18181b; 
+    --navbar-border: #27272a;
+    --search-bg: #27272a; 
+    --search-text: #fafafa; 
+    --dropdown-bg: #18181b;
+    --hover-bg: #27272a;
+  }
+}
+
+@layer base {
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-montserrat);
+  }
+}
+
+/* Custom Scrollbar Styling */
+@layer base {
+  /* Works on Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #a1a1aa var(--background);
+  }
+
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: var(--background);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #a1a1aa;
+    border-radius: 10px;
+    border: 3px solid var(--background);
+  }
+
+  .dark *::-webkit-scrollbar-thumb {
+    background-color: #3f3f46;
+  }
+}
